@@ -22,3 +22,5 @@ django-storages = "*"
 django = "*"
 django-filter = "*"
 psycopg = { extras = ["c"], version = "==3.2.3" }
+whitenoise = "*"
+drf-yasg = "*"

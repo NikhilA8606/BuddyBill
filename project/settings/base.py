@@ -1,6 +1,7 @@
-from .env import ABS_PATH, ENV_BOOL, ENV_STR, ENV_LIST
 import dj_database_url
 from corsheaders.defaults import default_headers
+
+from .env import ABS_PATH, ENV_BOOL, ENV_STR, ENV_LIST
 
 DEBUG = ENV_BOOL("DEBUG", False)
 SECRET_KEY = ENV_STR("SECRET_KEY", "secret" if DEBUG else "")
@@ -25,6 +26,7 @@ INSTALLED_APPS = [
     "buddybill.apps.BuddybillConfig",
     "users.apps.UsersConfig",
     "openapi.apps.OpenAPIConfig",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
