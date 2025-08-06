@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "27df2fa6216b7c8dcf2a26be7370bf9b6ebec3459bee7d715a040107e65662a2"
+            "sha256": "b071372b9c8b65ed4574839fe6916dfdff530b3ca96609f376a0ce2cc391ddfe"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -24,11 +24,11 @@
         },
         "asgiref": {
             "hashes": [
-                "sha256:06a41250a0114d2b6f6a2cb3ab962147d355b53d1de15eebc34a9d04a7b79981",
-                "sha256:3dd2556d0f08c4fab8a010d9ab05ef8c34565f6bf32381d17505f7ca5b273767"
+                "sha256:a5ab6582236218e5ef1648f242fd9f10626cfd4de8dc377db215d5d5098e3142",
+                "sha256:f3bba7092a48005b5f5bacd747d36ee4a5a61f4a269a6df590b43144355ebd2c"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==3.9.0"
+            "version": "==3.9.1"
         },
         "billiard": {
             "hashes": [
@@ -78,11 +78,11 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:2e0c7ce7cb5d8f8634ca55d2ba7e6ec2689a2fd6537d8dec1296a477a4910057",
-                "sha256:d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b"
+                "sha256:6b31f564a415d79ee77df69d757bb49a5bb53bd9f756cbbe24394ffd6fc1f4b2",
+                "sha256:8ea99dbdfaaf2ba2f9bac77b9249ef62ec5218e7c2b2e903378ed5fccf765995"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2025.6.15"
+            "version": "==2025.7.14"
         },
         "charset-normalizer": {
             "hashes": [
@@ -240,11 +240,11 @@
         },
         "django-allauth": {
             "hashes": [
-                "sha256:a06bca9974df44321e94c33bcf770bb6f924d1a44b57defbce4d7ec54a55483e"
+                "sha256:47daa3b0e11a1d75724ea32995de37bd2b8963e9e4cce2b3a7fd64eb6d3b3c48"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==65.9.0"
+            "version": "==65.10.0"
         },
         "django-anymail": {
             "hashes": [
@@ -291,6 +291,15 @@
             "markers": "python_version >= '3.9'",
             "version": "==3.16.0"
         },
+        "drf-nested-routers": {
+            "hashes": [
+                "sha256:74dbdceeae2a32f8668ba0df8e3eeabeb9b1c64d2621d914901ae653e4e3bcff",
+                "sha256:aa70923b716dc47cd93b8129b06be6c15706b405cf5f718f59cb8eed01de59cc"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==0.94.2"
+        },
         "drf-yasg": {
             "hashes": [
                 "sha256:4d832e108dfe38e365101c36123576b498487d33bf27d57d6a37efb4cc773438",
@@ -311,11 +320,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:7f69d579588c23d5ce671f3fa872654ede0e67047820255f43a4aa1925b89780",
-                "sha256:cb81c09ebe06c32a10971d1bbdb264bb0e22b59af59548f011ac4809556ce533"
+                "sha256:8e281bbaea30e5658895b8bea21cc50d27aaf3a43db3f2694409ca5701c56b0a",
+                "sha256:b70ed1af57bfe988cbcd0afd95f4768c51eaf4e1ce8a30962e127ac5c139c93f"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==37.4.0"
+            "version": "==37.4.2"
         },
         "gunicorn": {
             "hashes": [
@@ -349,6 +358,15 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==5.5.4"
+        },
+        "model-bakery": {
+            "hashes": [
+                "sha256:107b3efb8889baac83cae0e2d81465903b69a70eeb99ecfd0929d959a653ab90",
+                "sha256:796e0b7fa6bf2acc09feaadce40c6bcc13e5b55c5bdff9f76e87ceb64f736070"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==1.20.5"
         },
         "mypy-extensions": {
             "hashes": [

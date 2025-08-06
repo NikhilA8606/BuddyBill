@@ -45,6 +45,4 @@ class BuddyGroupUser(BaseModel):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
-class UserFriend(BaseModel):
-    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name="friends")
-    friend = models.ForeignKey(User, on_delete=models.PROTECT, related_name="+")
+

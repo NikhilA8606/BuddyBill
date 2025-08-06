@@ -1,8 +1,11 @@
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
+from uuid import uuid4
 from django.db import models
 from django.utils.timezone import now
+
+from utils.models import BaseModel
 
 
 class UserManager(BaseUserManager):
@@ -37,7 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """
     Model representing the user of the system
     """
-
+    external_id = models.UUIDField(db_index=True, default=uuid4, unique=True)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["name"]
     EMAIL_FIELD = "email"
@@ -77,3 +80,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def clean(self):
         super().clean()
         self.email = User.objects.normalize_email(self.email)
+
+class UserFriend(BaseModel):
+    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name="friends")
+    friend = models.ForeignKey(User, on_delete=models.PROTECT, related_name="+")

@@ -2,14 +2,8 @@ from django.urls import include, path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
-from rest_framework import routers
 
-from buddybill.urls import buddybill_router
-from users.urls import users_router
-
-router = routers.DefaultRouter()
-router.registry.extend(buddybill_router.registry)
-router.registry.extend(users_router.registry)
+from users.urls import urlpatterns as users_urlpatterns
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -36,5 +30,5 @@ urlpatterns = [
     path("api/v1/auth/", include("dj_rest_auth.urls")),
     path("api/v1/auth/register/", include("dj_rest_auth.registration.urls")),
     path("api/v1/", include("openapi.urls")),
-    path("api/v1/", include(router.urls)),
+    path("api/v1/", include(users_urlpatterns)),
 ]
