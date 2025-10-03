@@ -5,11 +5,6 @@ from users.models import User
 from utils.models import BaseModel
 
 
-class TopicTag(BaseModel):
-    name = models.CharField(max_length=255)
-    created_by = models.ForeignKey(User, on_delete=models.PROTECT)
-
-
 class TransactionCategory(models.TextChoices):
     EXPENSE = "EXPENSE"
     SETTLEMENT = "SETTLEMENT"
@@ -20,13 +15,14 @@ class Transaction(BaseModel):
         max_length=255,
     )
     total_amount = models.IntegerField(validators=[MinValueValidator(0)])
-    topic = models.ForeignKey(TopicTag, on_delete=models.PROTECT, null=True)
     category = models.CharField(
         choices=TransactionCategory,
         max_length=15,
         default=TransactionCategory.EXPENSE,
     )
-    created_by = models.ForeignKey(User, on_delete=models.PROTECT)
+    created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name="+")
+    updated_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name="+")
+    ouccured_at = models.DateTimeField(auto_now_add=True)
 
 
 class TransactionEntry(BaseModel):
@@ -43,6 +39,3 @@ class BuddyGroup(BaseModel):
 class BuddyGroupUser(BaseModel):
     buddy_group = models.ForeignKey(BuddyGroup, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.PROTECT)
-
-
-

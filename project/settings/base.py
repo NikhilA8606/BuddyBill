@@ -23,11 +23,12 @@ INSTALLED_APPS = [
     "django_filters",
     "dj_rest_auth",
     "dj_rest_auth.registration",
+    "drf_yasg",
+    "rest_framework_simplejwt",
     "buddybill.apps.BuddybillConfig",
     "users.apps.UsersConfig",
-    "openapi.apps.OpenAPIConfig",
-    "drf_yasg",
     "utils.apps.UtilsConfig",
+    "openapi.apps.OpenAPIConfig",
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # allauth settings
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USER_MODEL_USERNAME_FIELD = "email"
 ACCOUNT_LOGIN_METHODS = {"email"}
 ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
 ACCOUNT_UNIQUE_EMAIL = True
@@ -115,8 +116,7 @@ DEFAULT_FROM_EMAIL = ENV_STR("DEFAULT_FROM_EMAIL", SERVER_EMAIL)
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "TEST_REQUEST_DEFAULT_FORMAT": "json",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
