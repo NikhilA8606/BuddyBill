@@ -7,6 +7,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from buddybill.urls import urlpatterns as buddybill_urlpatterns
 from users.urls import urlpatterns as users_urlpatterns
 
 schema_view = get_schema_view(
@@ -35,6 +36,7 @@ urlpatterns = [
     path("api/v1/auth/register/", include("dj_rest_auth.registration.urls")),
     path("api/v1/", include("openapi.urls")),
     path("api/v1/", include(users_urlpatterns)),
+    path("api/v1/", include(buddybill_urlpatterns)),
     path("api/v1/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/v1/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
