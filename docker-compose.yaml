@@ -1,6 +1,6 @@
 networks:
   default:
-    name: buddybill
+    name: settlewithcircles
 
 services:
   django:
@@ -28,9 +28,9 @@ services:
     image: redis:7.2-alpine
     restart: unless-stopped
     volumes:
-      - buddybill-redis-data:/data
+      - settlewithcircles-redis-data:/data
     ports:
       - "6380:6379"
 volumes:
   postgres-data:
-  buddybill-redis-data:
+  settlewithcircles-redis-data:

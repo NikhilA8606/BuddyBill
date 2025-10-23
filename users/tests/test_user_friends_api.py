@@ -1,10 +1,10 @@
 from django.urls import reverse
 from rest_framework import status
 
-from utils.tests import BuddyBillAPITestBase
+from utils.tests import APITestBase
 
 
-class TestUserFriendsApi(BuddyBillAPITestBase):
+class TestUserFriendsApi(APITestBase):
     def setUp(self):
         super().setUp()
         self.user = self.create_user()

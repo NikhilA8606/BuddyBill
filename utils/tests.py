@@ -2,7 +2,7 @@ from model_bakery import baker
 from rest_framework.test import APITestCase
 
 
-class BuddyBillAPITestBase(APITestCase):
+class APITestBase(APITestCase):
 
     def create_user(self, **kwargs):
         from users.models import User
