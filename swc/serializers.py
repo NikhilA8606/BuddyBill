@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer, Serializer
 
-from buddybill.models import BuddyGroup
+from swc.models import Circle
 from users.models import User
 
 
@@ -10,11 +10,11 @@ class UserSerializer(Serializer):
         fields = ["id", "email", "name"]
 
 
-class BuddyGroupSerializer(ModelSerializer):
+class CircleSerializer(ModelSerializer):
     created_by = UserSerializer()
 
     class Meta:
-        model = BuddyGroup
+        model = Circle
         fields = [
             "name",
             "created_by",

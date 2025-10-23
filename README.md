@@ -1,4 +1,4 @@
-# BuddyBill
+# settlewithcircles
 
 ## Quickstart
 

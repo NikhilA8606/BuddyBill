@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from django.urls import path
 from rest_framework.schemas import get_schema_view
 
-TITLE = "BuddyBill"
+TITLE = "SettleWithCircles"
 DESCRIPTION = """
 
 """

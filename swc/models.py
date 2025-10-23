@@ -11,9 +11,7 @@ class TransactionCategory(models.TextChoices):
 
 
 class Transaction(BaseModel):
-    particulars = models.CharField(
-        max_length=255,
-    )
+    particulars = models.CharField(max_length=255)
     total_amount = models.IntegerField(validators=[MinValueValidator(0)])
     category = models.CharField(
         choices=TransactionCategory,
@@ -26,16 +24,16 @@ class Transaction(BaseModel):
 
 
 class TransactionEntry(BaseModel):
-    transaction = models.ForeignKey(Transaction, on_delete=models.CASCADE)
+    transaction = models.ForeignKey(Transaction, on_delete=models.PROTECT)
     amount = models.IntegerField(validators=[MinValueValidator(0)])
-    buddy = models.ForeignKey(User, on_delete=models.PROTECT)
+    associated_user = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
-class BuddyGroup(BaseModel):
+class Circle(BaseModel):
     name = models.CharField(max_length=255)
     created_by = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
-class BuddyGroupUser(BaseModel):
-    buddy_group = models.ForeignKey(BuddyGroup, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+class CircleMember(BaseModel):
+    circle = models.ForeignKey(Circle, on_delete=models.PROTECT)
+    member = models.ForeignKey(User, on_delete=models.PROTECT)

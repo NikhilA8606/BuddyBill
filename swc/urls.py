@@ -1,17 +1,13 @@
 from django.urls import include, path
 from rest_framework import routers
+from swc.views import CircleViewSet
 
-from buddybill.views import BuddyGroupViewSet
-
-buddybill_router = (
+swc_router = (
     routers.SimpleRouter()
 )  # default router & simplerouter are present , default router is mostly used for debugging purpose
 
-buddybill_router.register("groups", BuddyGroupViewSet)
+swc_router.register("circles", CircleViewSet)
 
 urlpatterns = [
-    path(
-        "",
-        include(buddybill_router.urls),
-    )
+    path("", include(swc_router.urls))
 ]

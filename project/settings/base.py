@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     "dj_rest_auth.registration",
     "drf_yasg",
     "rest_framework_simplejwt",
-    "buddybill.apps.BuddybillConfig",
+    "swc.apps.SettleWithCirclesConfig",
     "users.apps.UsersConfig",
     "utils.apps.UtilsConfig",
     "openapi.apps.OpenAPIConfig",
